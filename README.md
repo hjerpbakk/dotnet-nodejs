@@ -9,4 +9,4 @@ It uses microsoft/dotnet:*sdk as base image and a corresponding version of nodej
 https://hub.docker.com/r/microsoft/dotnet/
 
 ### node.js
-https://github.com/nodesource/…
+https://github.com/nodesource

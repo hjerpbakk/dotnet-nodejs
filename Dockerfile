@@ -1,8 +1,16 @@
-FROM microsoft/dotnet:2.1.301-sdk
+FROM microsoft/dotnet:2.1.301-sdk-alpine
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils > /dev/null 2>&1
-
-ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
-RUN apt-get install -y nodejs
+RUN NODE_VERSION="v10.5.0" && \
+    apk add --update --no-cache curl \
+    make \
+    python \
+    g++ \
+    gcc \
+    gcc-doc \
+    linux-headers && \
+  curl -L -O https://nodejs.org/dist/latest-v10.x/node-$NODE_VERSION.tar.gz && \
+  tar xzf node-$NODE_VERSION.tar.gz && \
+  cd node-$NODE_VERSION && \
+  ./configure && \
+  make && \
+  make install
