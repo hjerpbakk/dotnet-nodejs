@@ -3,6 +3,12 @@ Docker image containing dotnet and node.js for building SPAs like React with ASP
 
 It uses microsoft/dotnet:*sdk as base image and a corresponding version of nodejs. See the different branches for supported versions.
 
+## Build locally
+
+```bash
+docker build -t hjerpbakk/dotnet-nodejs:[tag] .
+```
+
 ## Sources
 
 ### dotnet
