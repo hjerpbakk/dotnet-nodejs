@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1.301-sdk
+FROM microsoft/dotnet:2.2-sdk
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils > /dev/null 2>&1
